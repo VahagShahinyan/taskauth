@@ -42,7 +42,7 @@ $ npm run dev
 ```
 
 
-#Postmen Collection file  
+# Postmen Collection file  
 ```
 File path: ./postman_collection.json
 ```
