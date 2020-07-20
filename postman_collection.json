@@ -1,0 +1,284 @@
+{
+	"info": {
+		"_postman_id": "d7a92baa-f689-4e34-907c-c0ceebe01413",
+		"name": "task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "file",
+			"item": [
+				{
+					"name": "upload",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/Users/hayk/Desktop/vesti/users.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/file/upload",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"file",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getlist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/file/delete/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"file",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "download",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test@test.test\",\n    \"password\": \"abcd123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test@test.test\",\n    \"password\": \"abcd123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/signin",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/logout",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "newtoken",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refresh_token\": {{refresh_token}}'\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/signin/new_token",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"signin",
+						"new_token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "8bb19999-4d42-4343-87dc-ca98299da4ba",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8aa47cc4-d7dd-4329-9aa7-b9635a73f0e6",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "9377115b-b9d4-4644-b8a1-39352032b3f0",
+			"key": "access_token",
+			"value": ""
+		},
+		{
+			"id": "e5b2fffb-9eb8-4b5f-9cd9-31c08cb18886",
+			"key": "refresh_token",
+			"value": ""
+		},
+		{
+			"id": "0ce94b74-be93-4de3-9ae0-8332ad7868be",
+			"key": "host",
+			"value": "localhost:3000"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
