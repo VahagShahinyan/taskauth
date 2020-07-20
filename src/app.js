@@ -3,11 +3,12 @@ const router = require('./routes/root.route')
 const bodyParser = require('body-parser');
 const database = require('./config/database');
 const config = require('./config/config');
-
+const cors = require('cors')
 database.sync()
 
 const app = express()
-
+app.disable('x-powered-by')
+app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
